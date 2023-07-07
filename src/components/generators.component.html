@@ -1,0 +1,18 @@
+<div class="subheader">
+  <h1>Generators</h1>
+</div>
+
+<div class="mt-5">
+  <div class="container">
+      <div class="mx-auto">
+        <div class="flex">
+          <ntt-text-box class="flex-1 mb-3 mr-3" :label="'Project name'" :showClearButton="true" v-model="projectName" :required="true" @valueChanged="valueChanged($event)" />
+          <ntt-text-box class="flex-1 mb-3 ml-3" :label="'Team name'" :showClearButton="true" v-model="teamName"  @valueChanged="valueChanged($event)"/>
+        </div>
+        <ntt-accordion v-model:steps="steps" :reset="resetAccordion" @stateSteps="stateSteps($event)" @dataSteps="dataSteps($event)" />
+      </div>
+  </div>
+</div>
+<div class="flex justify-center mt-4">
+  <ntt-button :width="150" class="button-generate" text="Generate" type="normal" styling-mode="outlined" :disabled="!stateStepper" @btn-click="generatorClicked()"></ntt-button>
+</div>
